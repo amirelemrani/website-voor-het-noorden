@@ -4,20 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Het Noorden | vervoer zoals het hoort</title>
-<style>.header-container {.header-container {
-  display: flex;
+<style>.header-container {display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
+  padding: 20px 40px;
+  flex-wrap: nowrap; /* belangrijk */
 }
 
 .logo img {
   height: 180px;
 }
 
-nav {
-  display: flex;
-  gap: 25px;
+nav {display: flex;
+  gap: 40px;
+  margin: 0 auto; /* duwt hem naar midden */
+
 }
 
 nav a {
@@ -28,10 +29,7 @@ nav a {
 }
 
 .header-phone a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #0A3D62;
-  font-size: 16px;
+  margin-left: auto;
 }
   }
 body {
