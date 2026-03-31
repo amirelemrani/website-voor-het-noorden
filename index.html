@@ -7,29 +7,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Het Noorden | vervoer zoals het hoort</title>
-<style>.header-container {display: flex;
+<style><style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background: #fff;
+  width: 100%;
+}
+
+.header-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   padding: 20px 40px;
-}
-
-.logo {
-  flex: 0 0 auto;
-}
-
-nav {
-  flex: 1;                /* neemt alle ruimte in */
-  display: flex;
-  justify-content: center; /* zet menu in midden */
-  gap: 50px;
-}
-
-.header-phone {
-  flex: 0 0 auto;
-  margin-left: auto;       /* duwt hem helemaal naar rechts */
+  box-sizing: border-box;
 }
 
 .logo img {
   height: 100px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
 nav a {
@@ -39,12 +45,17 @@ nav a {
   text-decoration: none;
 }
 
+.header-phone {
+  justify-self: end;
+}
+
 .header-phone a {
   font-size: 30px;
   font-weight: bold;
   color: #0A3D62;
   text-decoration: none;
 }
+
 .hero {
   background: url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat;
   height: 400px;
@@ -66,6 +77,17 @@ nav a {
   position: relative;
   text-align: center;
   z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 100px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 40px;
+  margin: 10px 0 20px 0;
 }
 
 .section {
@@ -94,6 +116,13 @@ nav a {
   border-radius: 50px;
   text-decoration: none;
 }
+
+footer {
+  background: #f5f5f5;
+  padding: 30px;
+  text-align: center;
+}
+</style>
 <style>
 body {font-family: Arial; margin:0;}
 header {display:flex; justify-content:space-between; align-items:center; padding:15px; background:#fff;}
