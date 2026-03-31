@@ -6,49 +6,42 @@
 <title>Het Noorden | vervoer zoals het hoort</title>
 <style>.header-container {display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 20px 40px;
-  flex-wrap: nowrap; /* belangrijk */
+}
+
+.logo {
+  flex: 0 0 auto;
+}
+
+nav {
+  flex: 1;                /* neemt alle ruimte in */
+  display: flex;
+  justify-content: center; /* zet menu in midden */
+  gap: 50px;
+}
+
+.header-phone {
+  flex: 0 0 auto;
+  margin-left: auto;       /* duwt hem helemaal naar rechts */
 }
 
 .logo img {
-  height: 180px;
-}
-
-nav {display: flex;
-  gap: 40px;
-  margin: 0 auto; /* duwt hem naar midden */
-
-}
-
-nav a {
-  text-decoration: none;
-  color: #0A3D62;
-  font-weight: 600;
-  font-size: 26px;
-}
-
-.header-phone a {
-  margin-left: auto;
-}
-  }
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  background: #fff;
-}
-
-header img {
   height: 100px;
 }
 
+nav a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0A3D62;
+  text-decoration: none;
+}
+
+.header-phone a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0A3D62;
+  text-decoration: none;
+}
 .hero {
   background: url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat;
   height: 400px;
