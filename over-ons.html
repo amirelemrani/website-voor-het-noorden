@@ -7,12 +7,22 @@
 <style>
 body {font-family: Arial, sans-serif; margin: 0; color: #1f2937;}
 header {background:#fff; width:100%; border-bottom:1px solid #e5e7eb;}
-.header-container {width:100%; display:grid; grid-template-columns:auto 1fr auto; align-items:center; padding:20px 40px;}
+.header-container {width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 20px 25px;
+  box-sizing: border-box;}
 .logo img {height:100px;}
 nav {display:flex; justify-content:center; gap:60px;}
 nav a {font-size:18px; font-weight:600; color:#0A3D62; text-decoration:none;}
-.header-phone {justify-self:end;}
-.header-phone a {font-size:30px; font-weight:bold; color:#0A3D62; text-decoration:none;}
+.header-phone {justify-self: end;
+  padding-left: 20px;}
+.header-phone a {font-size: 24px;
+  font-weight: bold;
+  color: #0A3D62;
+  text-decoration: none;
+  white-space: nowrap;}
 .over-ons-hero {position:relative; background:url("picture-over-ons-pagina.png") center/cover no-repeat; height:400px; display:flex; align-items:center; justify-content:center; color:white; text-align:center;}
 .over-ons-hero::before {content:""; position:absolute; inset:0; background:rgba(0,0,0,0.35);}
 .over-ons-hero-content {position:relative; z-index:1;}
