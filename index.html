@@ -7,8 +7,16 @@
 <style>
 body {font-family: Arial; margin:0;}
 header {display:flex; justify-content:space-between; align-items:center; padding:15px; background:#fff;}
-header img {height:50px;}
-.hero {background:url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat; height:400px; display:flex; align-items:center; justify-content:center; color:white; position:relative;}
+header img {.hero 
+  background: url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+.hero {n-items:center; justify-content:center; color:white; position:relative;}
 .hero::before {content:''; position:absolute; inset:0; background:rgba(0,0,0,0.4);}
 .hero-content {position:relative; text-align:center;}
 .section {padding:40px;}
