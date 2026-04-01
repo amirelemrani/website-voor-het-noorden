@@ -125,10 +125,15 @@
       margin-bottom: 30px;
     }
 
-    .services {
+    .service-wide-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      align-items: stretch;
     }
 
     .service {
@@ -137,21 +142,16 @@
       border-radius: 10px;
       display: flex;
       flex-direction: column;
-      min-height: 220px;
+      min-height: 240px;
     }
 
     .service-wide {
-      grid-column: span 2;
+      width: 100%;
       min-height: 220px;
     }
 
-    .service-content {
-      flex-grow: 1;
-    }
-
     .service h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
       color: #0A3D62;
       font-size: 24px;
     }
@@ -163,11 +163,16 @@
       color: #374151;
     }
 
+    .service-content {
+      flex: 1;
+    }
+
     .service-buttons {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 18px;
+      margin-top: auto;
+      padding-top: 18px;
     }
 
     .service-button {
@@ -256,12 +261,8 @@
         font-size: 24px;
       }
 
-      .services {
+      .services-grid {
         grid-template-columns: 1fr;
-      }
-
-      .service-wide {
-        grid-column: span 1;
       }
 
       .footer-container {
@@ -332,8 +333,7 @@
   <div class="section" id="diensten">
     <h2>Wat wij doen</h2>
 
-    <div class="services">
-
+    <div class="service-wide-wrapper">
       <div class="service service-wide">
         <div class="service-content">
           <h3>Taxivervoer</h3>
@@ -344,7 +344,9 @@
           <a href="taxivervoer-met-contactformulier.html#contact-form" class="service-button">Boek direct</a>
         </div>
       </div>
+    </div>
 
+    <div class="services-grid">
       <div class="service">
         <div class="service-content">
           <h3>Leerlingenvervoer</h3>
@@ -384,13 +386,11 @@
           <a href="medicijnenvervoer.html" class="service-button">Meer informatie</a>
         </div>
       </div>
-
     </div>
   </div>
 
   <footer>
     <div class="footer-container">
-
       <div class="footer-col">
         <h3>Het Noorden</h3>
         <p>Vervoer zoals het hoort</p>
@@ -409,7 +409,6 @@
         <p>085-1234567</p>
         <p>info@hetnoorden.nl</p>
       </div>
-
     </div>
   </footer>
 
