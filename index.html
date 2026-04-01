@@ -125,54 +125,61 @@
       margin-bottom: 30px;
     }
 
-    .service-wide-wrapper {
-      margin-bottom: 20px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .diensten-wrapper {
+      display: flex;
+      flex-direction: column;
       gap: 20px;
-      align-items: stretch;
     }
 
-    .service {
+    .dienst-breed {
       background: #f5f5f5;
       padding: 24px;
       border-radius: 10px;
+    }
+
+    .diensten-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .dienst-kaart {
+      background: #f5f5f5;
+      padding: 24px;
+      border-radius: 10px;
+      min-height: 220px;
       display: flex;
       flex-direction: column;
-      min-height: 240px;
     }
 
-    .service-wide {
-      width: 100%;
-      min-height: 220px;
+    .dienst-kaart-inhoud {
+      flex: 1;
     }
 
-    .service h3 {
+    .dienst-breed h3,
+    .dienst-kaart h3 {
       margin: 0 0 10px 0;
       color: #0A3D62;
       font-size: 24px;
     }
 
-    .service p {
+    .dienst-breed p,
+    .dienst-kaart p {
       margin: 0;
       font-size: 17px;
       line-height: 1.7;
       color: #374151;
     }
 
-    .service-content {
-      flex: 1;
-    }
-
-    .service-buttons {
+    .dienst-knoppen {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: auto;
-      padding-top: 18px;
+      margin-top: 18px;
+    }
+
+    .dienst-knop-onder {
+      margin-top: 18px;
     }
 
     .service-button {
@@ -261,7 +268,7 @@
         font-size: 24px;
       }
 
-      .services-grid {
+      .diensten-grid {
         grid-template-columns: 1fr;
       }
 
@@ -284,7 +291,7 @@
         font-size: 20px;
       }
 
-      .service-buttons {
+      .dienst-knoppen {
         flex-direction: column;
       }
 
@@ -331,85 +338,61 @@
   </div>
 
   <div class="section" id="diensten">
-  <h2>Wat wij doen</h2>
+    <h2>Wat wij doen</h2>
 
-  <div style="display: flex; flex-direction: column; gap: 20px;">
+    <div class="diensten-wrapper">
 
-    <!-- BOVENSTE BREDE BLOK -->
-    <div style="background:#f5f5f5; padding:24px; border-radius:10px;">
-      <h3 style="margin:0 0 10px 0; color:#0A3D62; font-size:24px;">Taxivervoer</h3>
-      <p style="margin:0 0 18px 0; font-size:17px; line-height:1.7; color:#374151;">
-        Professioneel en betrouwbaar vervoer op afspraak, voor zowel particuliere als zakelijke ritten.
-      </p>
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="taxivervoer.html" style="display:inline-block; background:#0A3D62; color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;">Meer informatie</a>
-        <a href="taxivervoer-met-contactformulier.html#contact-form" style="display:inline-block; background:#0A3D62; color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;">Boek direct</a>
-      </div>
-    </div>
-
-    <!-- ONDERSTE 4 BLOKKEN -->
-    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;">
-
-      <div style="background:#f5f5f5; padding:24px; border-radius:10px; min-height:220px; display:flex; flex-direction:column;">
-        <div style="flex:1;">
-          <h3 style="margin:0 0 10px 0; color:#0A3D62; font-size:24px;">Leerlingenvervoer</h3>
-          <p style="margin:0; font-size:17px; line-height:1.7; color:#374151;">
-            Veilig en betrouwbaar dagelijks vervoer, met aandacht voor rust, duidelijkheid en punctualiteit.
-          </p>
-        </div>
-        <div style="margin-top:18px;">
-          <a href="leerlingenvervoer.html" style="display:inline-block; background:#0A3D62; color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;">Meer informatie</a>
+      <div class="dienst-breed">
+        <h3>Taxivervoer</h3>
+        <p>Professioneel en betrouwbaar vervoer op afspraak, voor zowel particuliere als zakelijke ritten.</p>
+        <div class="dienst-knoppen">
+          <a href="taxivervoer.html" class="service-button">Meer informatie</a>
+          <a href="taxivervoer-met-contactformulier.html#contact-form" class="service-button">Boek direct</a>
         </div>
       </div>
 
-      <div style="background:#f5f5f5; padding:24px; border-radius:10px; min-height:220px; display:flex; flex-direction:column;">
-        <div style="flex:1;">
-          <h3 style="margin:0 0 10px 0; color:#0A3D62; font-size:24px;">Zakelijk vervoer</h3>
-          <p style="margin:0; font-size:17px; line-height:1.7; color:#374151;">
-            Representatief en discreet vervoer voor bedrijven, medewerkers en relaties.
-          </p>
-        </div>
-        <div style="margin-top:18px;">
-          <a href="zakelijk-vervoer.html" style="display:inline-block; background:#0A3D62; color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;">Meer informatie</a>
-        </div>
-      </div>
+      <div class="diensten-grid">
 
-      <div style="background:#f5f5f5; padding:24px; border-radius:10px; min-height:220px; display:flex; flex-direction:column;">
-        <div style="flex:1;">
-          <h3 style="margin:0 0 10px 0; color:#0A3D62; font-size:24px;">Zorgvervoer</h3>
-          <p style="margin:0; font-size:17px; line-height:1.7; color:#374151;">
-            Rustig en zorgvuldig vervoer voor cliënten, bezoekers en zorginstellingen.
-          </p>
+        <div class="dienst-kaart">
+          <div class="dienst-kaart-inhoud">
+            <h3>Leerlingenvervoer</h3>
+            <p>Veilig en betrouwbaar dagelijks vervoer, met aandacht voor rust, duidelijkheid en punctualiteit.</p>
+          </div>
+          <div class="dienst-knop-onder">
+            <a href="leerlingenvervoer.html" class="service-button">Meer informatie</a>
+          </div>
         </div>
-        <div style="margin-top:18px;">
-          <a href="zorgvervoer.html" style="display:inline-block; background:#0A3D62; color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;">Meer informatie</a>
-        </div>
-      </div>
 
-      <div style="background:#f5f5f5; padding:24px; border-radius:10px; min-height:220px; display:flex; flex-direction:column;">
-        <div style="flex:1;">
-          <h3 style="margin:0 0 10px 0; color:#0A3D62; font-size:24px;">Medicijnenvervoer</h3>
-          <p style="margin:0; font-size:17px; line-height:1.7; color:#374151;">
-            Snel en zorgvuldig vervoer van medicatie, zowel gepland als met spoed.
-          </p>
+        <div class="dienst-kaart">
+          <div class="dienst-kaart-inhoud">
+            <h3>Zakelijk vervoer</h3>
+            <p>Representatief en discreet vervoer voor bedrijven, medewerkers en relaties.</p>
+          </div>
+          <div class="dienst-knop-onder">
+            <a href="zakelijk-vervoer.html" class="service-button">Meer informatie</a>
+          </div>
         </div>
-        <div style="margin-top:18px;">
-          <a href="medicijnenvervoer.html" style="display:inline-block; background:#0A3D62; color:#fff; text-decoration:none; padding:10px 18px; border-radius:6px; font-size:15px; font-weight:600;">Meer informatie</a>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</div></div>
+        <div class="dienst-kaart">
+          <div class="dienst-kaart-inhoud">
+            <h3>Zorgvervoer</h3>
+            <p>Rustig en zorgvuldig vervoer voor cliënten, bezoekers en zorginstellingen.</p>
+          </div>
+          <div class="dienst-knop-onder">
+            <a href="zorgvervoer.html" class="service-button">Meer informatie</a>
+          </div>
+        </div>
 
-      <div class="service">
-        <div class="service-content">
-          <h3>Medicijnenvervoer</h3>
-          <p>Snel en zorgvuldig vervoer van medicatie, zowel gepland als met spoed.</p>
+        <div class="dienst-kaart">
+          <div class="dienst-kaart-inhoud">
+            <h3>Medicijnenvervoer</h3>
+            <p>Snel en zorgvuldig vervoer van medicatie, zowel gepland als met spoed.</p>
+          </div>
+          <div class="dienst-knop-onder">
+            <a href="medicijnenvervoer.html" class="service-button">Meer informatie</a>
+          </div>
         </div>
-        <div class="service-buttons">
-          <a href="medicijnenvervoer.html" class="service-button">Meer informatie</a>
-        </div>
+
       </div>
     </div>
   </div>
