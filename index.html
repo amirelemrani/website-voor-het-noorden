@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Het Noorden | vervoer zoals het hoort</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
+      color: #1f2937;
+      background: #ffffff;
     }
 
     header {
       background: #fff;
       width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     .header-container {
@@ -21,19 +31,25 @@
       display: grid;
       grid-template-columns: auto 1fr auto;
       align-items: center;
-      padding: 20px 40px;
-      box-sizing: border-box;
+      padding: 18px 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo a {
+      display: inline-block;
     }
 
     .logo img {
-      height: 115px;
+      height: 88px;
       width: auto;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      gap: 60px;
+      gap: 40px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -41,27 +57,36 @@
       font-weight: 600;
       color: #0A3D62;
       text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #145a8d;
     }
 
     .header-phone {
       justify-self: end;
+      padding-left: 20px;
     }
 
     .header-phone a {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: 22px;
+      font-weight: 700;
       color: #0A3D62;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .hero {
       background: url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat;
-      height: 400px;
+      min-height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       position: relative;
+      text-align: center;
+      padding: 40px 20px;
     }
 
     .hero::before {
@@ -73,23 +98,31 @@
 
     .hero-content {
       position: relative;
-      text-align: center;
       z-index: 1;
+      max-width: 900px;
     }
 
     .hero-content h1 {
-      font-size: 100px;
+      font-size: 72px;
       font-weight: 800;
       margin: 0;
     }
 
     .hero-content p {
-      font-size: 40px;
-      margin: 10px 0 20px 0;
+      font-size: 32px;
+      margin: 12px 0 0 0;
     }
 
     .section {
-      padding: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    .section h2 {
+      color: #0A3D62;
+      font-size: 34px;
+      margin-bottom: 30px;
     }
 
     .services {
@@ -100,8 +133,39 @@
 
     .service {
       background: #f5f5f5;
-      padding: 20px;
+      padding: 24px;
       border-radius: 10px;
+    }
+
+    .service h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #0A3D62;
+      font-size: 24px;
+    }
+
+    .service p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #374151;
+    }
+
+    .service-button {
+      display: inline-block;
+      margin-top: 15px;
+      background: #0A3D62;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .service-button:hover {
+      background: #145a8d;
     }
 
     .belknop {
@@ -110,77 +174,173 @@
       right: 20px;
       background: #0A3D62;
       color: white;
-      padding: 15px;
+      padding: 15px 20px;
       border-radius: 50px;
       text-decoration: none;
+      font-weight: 700;
+      z-index: 1001;
     }
 
     footer {
       background: #f5f5f5;
-      padding: 30px;
-      text-align: center;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 20px;
+    }
+
+    .footer-col h3 {
+      font-size: 24px;
+      color: #0A3D62;
+      margin-bottom: 10px;
+    }
+
+    .footer-col h4 {
+      font-size: 20px;
+      color: #0A3D62;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p {
+      margin: 6px 0;
+      color: #374151;
+      font-size: 17px;
+    }
+
+    @media (max-width: 900px) {
+      .header-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .logo,
+      .header-phone {
+        justify-self: center;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+
+      .hero-content p {
+        font-size: 24px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <div class="logo">
-        <img src="hero-logo.png" alt="Het Noorden logo">
-      </div>
-
-      <nav>
-        <a href="#">Diensten</a>
-       <a href="over-ons.html">Over ons</a>
-        <a href="#">Contact</a>
-      </nav>
-
-      <div class="header-phone">
-        <a href="tel:+31851234567">📞 085-1234567</a>
-      </div>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="hero-logo.png" alt="Logo Het Noorden">
+      </a>
     </div>
-  </header>
 
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Het Noorden</h1>
-      <p>vervoer zoals het hoort</p>
+    <nav>
+      <a href="index.html">Diensten</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-phone">
+      <a href="tel:+31851234567">085-1234567</a>
     </div>
   </div>
+</header>
 
-  <div class="section">
-    <h2>Wat wij doen</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Taxivervoer</h3>
-        <p>Professioneel vervoer op afspraak.</p>
-      </div>
-      <div class="service">
-        <h3>Leerlingenvervoer</h3>
-        <p>Veilig en betrouwbaar dagelijks vervoer.</p>
-      </div>
-      <div class="service">
-        <h3>Zakelijk vervoer</h3>
-        <p>Discreet en professioneel.</p>
-      </div>
-      <div class="service">
-        <h3>Zorgvervoer</h3>
-        <p>Rustig en zorgvuldig vervoer.</p>
-      </div>
-      <div class="service">
-        <h3>Medicijnenvervoer</h3>
-        <p>Spoed en gepland vervoer.</p>
-      </div>
-    </div>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Het Noorden</h1>
+    <p>vervoer zoals het hoort</p>
   </div>
+</div>
 
-  <footer>
-    <p><strong>Het Noorden</strong></p>
-    <p>📞 085-1234567</p>
-  </footer>
+<div class="section">
+  <h2>Wat wij doen</h2>
 
-  <a href="tel:+31851234567" class="belknop">📞 Bel direct</a>
+  <div class="services">
+
+    <div class="service">
+      <h3>Taxivervoer</h3>
+      <p>Professioneel vervoer op afspraak.</p>
+      <a href="taxivervoer.html" class="service-button">Meer informatie</a>
+    </div>
+
+    <div class="service">
+      <h3>Leerlingenvervoer</h3>
+      <p>Veilig en betrouwbaar dagelijks vervoer.</p>
+      <a href="leerlingenvervoer.html" class="service-button">Meer informatie</a>
+    </div>
+
+    <div class="service">
+      <h3>Zakelijk vervoer</h3>
+      <p>Discreet en professioneel.</p>
+      <a href="zakelijk-vervoer.html" class="service-button">Meer informatie</a>
+    </div>
+
+    <div class="service">
+      <h3>Zorgvervoer</h3>
+      <p>Rustig en zorgvuldig vervoer.</p>
+      <a href="zorgvervoer.html" class="service-button">Meer informatie</a>
+    </div>
+
+    <div class="service">
+      <h3>Medicijnenvervoer</h3>
+      <p>Spoed en gepland vervoer.</p>
+      <a href="medicijnenvervoer.html" class="service-button">Meer informatie</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Het Noorden</h3>
+      <p>Vervoer zoals het hoort</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Diensten</h4>
+      <p>Taxivervoer</p>
+      <p>Leerlingenvervoer</p>
+      <p>Zorgvervoer</p>
+      <p>Medicijnenvervoer</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>085-1234567</p>
+      <p>Email: info@hetnoorden.nl</p>
+    </div>
+
+  </div>
+</footer>
+
+<a href="tel:+31851234567" class="belknop">📞 Bel direct</a>
 
 </body>
 </html>
