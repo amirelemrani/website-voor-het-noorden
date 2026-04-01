@@ -135,6 +135,9 @@
       background: #f5f5f5;
       padding: 24px;
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .service h3 {
@@ -151,9 +154,15 @@
       color: #374151;
     }
 
+    .service-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
     .service-button {
       display: inline-block;
-      margin-top: 15px;
       background: #0A3D62;
       color: #fff;
       text-decoration: none;
@@ -167,13 +176,7 @@
     .service-button:hover {
       background: #145a8d;
     }
-.service-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%; /* 👈 DIT IS DE BELANGRIJKSTE */
-  margin-top: 15px;
-}
-}
+
     .belknop {
       position: fixed;
       bottom: 20px;
@@ -185,6 +188,7 @@
       text-decoration: none;
       font-weight: 700;
       z-index: 1001;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     }
 
     footer {
@@ -252,6 +256,35 @@
         text-align: center;
       }
     }
+
+    @media (max-width: 600px) {
+      .hero {
+        min-height: 300px;
+      }
+
+      .hero-content h1 {
+        font-size: 38px;
+      }
+
+      .hero-content p {
+        font-size: 20px;
+      }
+
+      .service-buttons {
+        flex-direction: column;
+      }
+
+      .service-button {
+        width: 100%;
+        text-align: center;
+      }
+
+      .belknop {
+        bottom: 15px;
+        right: 15px;
+        padding: 13px 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -265,7 +298,7 @@
     </div>
 
     <nav>
-      <a href="index.html">Diensten</a>
+      <a href="#diensten">Diensten</a>
       <a href="over-ons.html">Over ons</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -283,47 +316,60 @@
   </div>
 </div>
 
-<div class="section">
+<div class="section" id="diensten">
   <h2>Wat wij doen</h2>
 
   <div class="services">
 
     <div class="service">
-      <h3>Taxivervoer</h3>
-      <p>Professioneel vervoer op afspraak.</p>
-<div class="service-buttons">
- <div class="service-buttons">
-  <a href="taxivervoer.html" class="service-button">Meer informatie</a>
-  <a href="taxivervoer-met-contactformulier.html#contact-form" class="service-button">
-    Boek direct
-  </a>
-</div>
-</div>
-</a>
+      <div>
+        <h3>Taxivervoer</h3>
+        <p>Professioneel en betrouwbaar vervoer op afspraak, voor zowel particuliere als zakelijke ritten.</p>
+      </div>
+      <div class="service-buttons">
+        <a href="taxivervoer.html" class="service-button">Meer informatie</a>
+        <a href="taxivervoer-met-contactformulier.html#contact-form" class="service-button">Boek direct</a>
+      </div>
     </div>
 
     <div class="service">
-      <h3>Leerlingenvervoer</h3>
-      <p>Veilig en betrouwbaar dagelijks vervoer.</p>
-      <a href="leerlingenvervoer.html" class="service-button">Meer informatie</a>
+      <div>
+        <h3>Leerlingenvervoer</h3>
+        <p>Veilig en betrouwbaar dagelijks vervoer, met aandacht voor rust, duidelijkheid en punctualiteit.</p>
+      </div>
+      <div class="service-buttons">
+        <a href="leerlingenvervoer.html" class="service-button">Meer informatie</a>
+      </div>
     </div>
 
     <div class="service">
-      <h3>Zakelijk vervoer</h3>
-      <p>Discreet en professioneel.</p>
-      <a href="zakelijk-vervoer.html" class="service-button">Meer informatie</a>
+      <div>
+        <h3>Zakelijk vervoer</h3>
+        <p>Representatief en discreet vervoer voor bedrijven, medewerkers en relaties.</p>
+      </div>
+      <div class="service-buttons">
+        <a href="zakelijk-vervoer.html" class="service-button">Meer informatie</a>
+      </div>
     </div>
 
     <div class="service">
-      <h3>Zorgvervoer</h3>
-      <p>Rustig en zorgvuldig vervoer.</p>
-      <a href="zorgvervoer.html" class="service-button">Meer informatie</a>
+      <div>
+        <h3>Zorgvervoer</h3>
+        <p>Rustig en zorgvuldig vervoer voor cliënten, bezoekers en zorginstellingen.</p>
+      </div>
+      <div class="service-buttons">
+        <a href="zorgvervoer.html" class="service-button">Meer informatie</a>
+      </div>
     </div>
 
     <div class="service">
-      <h3>Medicijnenvervoer</h3>
-      <p>Spoed en gepland vervoer.</p>
-      <a href="medicijnenvervoer.html" class="service-button">Meer informatie</a>
+      <div>
+        <h3>Medicijnenvervoer</h3>
+        <p>Snel en zorgvuldig vervoer van medicatie, zowel gepland als met spoed.</p>
+      </div>
+      <div class="service-buttons">
+        <a href="medicijnenvervoer.html" class="service-button">Meer informatie</a>
+      </div>
     </div>
 
   </div>
@@ -348,7 +394,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <p>085-1234567</p>
-      <p>Email: info@hetnoorden.nl</p>
+      <p>info@hetnoorden.nl</p>
     </div>
 
   </div>
