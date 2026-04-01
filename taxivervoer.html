@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taxivervoer | Het Noorden</title>
+
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 0; color: #1f2937; background: #ffffff; }
+    header { background: #fff; width: 100%; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 1000; }
+    .header-container { width: 100%; display: grid; grid-template-columns: auto 1fr auto; align-items: center; padding: 18px 25px; max-width: 1400px; margin: 0 auto; }
+    .logo img { height: 88px; width: auto; display: block; }
+    nav { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    nav a { font-size: 18px; font-weight: 600; color: #0A3D62; text-decoration: none; }
+    .header-phone a { font-size: 22px; font-weight: 700; color: #0A3D62; text-decoration: none; }
+
+    .hero { position: relative; background: url("background-taxiritten.png") center/cover no-repeat; min-height: 420px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 40px 20px; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.45); }
+    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .hero-content h1 { font-size: 62px; margin: 0 0 12px; color: #fff; }
+    .hero-content p { font-size: 24px; margin: 0; color: #fff; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 70px 30px; }
+    h2 { color: #0A3D62; font-size: 34px; margin-bottom: 18px; }
+    p { font-size: 18px; line-height: 1.8; color: #374151; }
+
+    .tarieven-box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 14px; padding: 30px; }
+    .tarieven-lijst { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 30px; }
+    .tarief-item { display: flex; justify-content: space-between; background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px; }
+
+    .cta-box { background: #0A3D62; color: #fff; border-radius: 14px; padding: 38px 30px; margin-top: 60px; text-align: center; }
+    .cta-button { display: inline-block; background: #fff; color: #0A3D62; padding: 14px 26px; border-radius: 8px; text-decoration: none; font-weight: 700; }
+
+    footer { background: #f5f5f5; margin-top: 60px; }
+    .footer-container { display: grid; grid-template-columns: 1fr 1fr 1fr; max-width: 1100px; margin: 0 auto; padding: 45px 20px; }
+
+    .belknop { position: fixed; bottom: 20px; right: 20px; background: #0A3D62; color: white; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="hero-logo.png" alt="Logo Het Noorden">
+    </div>
+    <nav>
+      <a href="index.html">Diensten</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-phone">
+      <a href="tel:+31851234567">085-1234567</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Taxivervoer</h1>
+    <p>Betrouwbaar, comfortabel en verzorgd vervoer voor al uw ritten in de regio</p>
+  </div>
+</section>
+
+<div class="container">
+  <h2>Voor al uw ritten in de regio</h2>
+  <p>Boek uw taxi eenvoudig bij Het Noorden voor ritten in Zaandam, Amsterdam, Almere, Amstelveen, Haarlem, Purmerend en Waterland.</p>
+
+  <h2>Vaste tarieven Schiphol</h2>
+  <div class="tarieven-box">
+    <div class="tarieven-lijst">
+      <div class="tarief-item"><span>Amsterdam</span><strong>€55</strong></div>
+      <div class="tarief-item"><span>Amstelveen</span><strong>€40</strong></div>
+      <div class="tarief-item"><span>Haarlem</span><strong>€65</strong></div>
+      <div class="tarief-item"><span>Zaandam</span><strong>€75</strong></div>
+      <div class="tarief-item"><span>Purmerend</span><strong>€85</strong></div>
+      <div class="tarief-item"><span>Almere Stad</span><strong>€75</strong></div>
+      <div class="tarief-item"><span>Almere buiten stad</span><strong>€85</strong></div>
+    </div>
+    <p><strong>Bus toeslag:</strong> + €15</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Direct uw rit reserveren?</h3>
+    <a href="#contact-form" class="cta-button">Boek nu uw rit</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+    <div><h3>Het Noorden</h3><p>Vervoer zoals het hoort</p></div>
+    <div><h3>Diensten</h3><p>Taxivervoer</p></div>
+    <div><h3>Contact</h3><p>085-1234567</p></div>
+  </div>
+</footer>
+
+<a href="tel:+31851234567" class="belknop">📞 Bel direct</a>
+
+</body>
+</html>
