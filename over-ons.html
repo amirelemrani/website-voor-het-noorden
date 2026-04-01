@@ -1,158 +1,372 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Over ons | Het Noorden</title>
-<style>
-body {font-family: Arial, sans-serif; margin: 0; color: #1f2937;}
-header {background:#fff; width:100%; border-bottom:1px solid #e5e7eb;}
-.header-container {width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  padding: 20px 25px;
-  box-sizing: border-box;}
-.logo img {height:100px;}
-nav {display:flex; justify-content:center; gap:60px;}
-nav a {font-size:18px; font-weight:600; color:#0A3D62; text-decoration:none;}
-.header-phone {justify-self: end;
-  padding-left: 20px;}
-.header-phone a {font-size: 24px;
-  font-weight: bold;
-  color: #0A3D62;
-  text-decoration: none;
-  white-space: nowrap;}
-.over-ons-hero {position:relative; background:url("picture-over-ons-pagina.png") center/cover no-repeat; height:400px; display:flex; align-items:center; justify-content:center; color:white; text-align:center;}
-.over-ons-hero::before {content:""; position:absolute; inset:0; background:rgba(0,0,0,0.35);}
-.over-ons-hero-content {position:relative; z-index:1;}
-.over-ons-hero-content h1 {font-size:80px; margin:0;}
-.over-ons-hero-content p {font-size:32px;}
-.container {max-width:1100px; margin:0 auto; padding:60px 30px;}
-h2 {color:#0A3D62; font-size:34px;}
-p {font-size:18px; line-height:1.7;}
-footer {background:#f5f5f5; padding:40px; text-align:center;}
-  footer p:first-child {
-  font-size: 32px;
-  font-weight: 800;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over ons | Het Noorden</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-footer p:last-child {
-  font-size: 30px;
-  font-weight: 700;
-}
-  .footer-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #1f2937;
+      background: #ffffff;
+    }
 
-.footer-col h3 {
-  font-size: 26px;
-  color: #0A3D62;
-  margin-bottom: 10px;
-}
+    header {
+      background: #fff;
+      width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.footer-col h4 {
-  font-size: 20px;
-  color: #0A3D62;
-  margin-bottom: 10px;
-}
+    .header-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 18px 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
 
-.footer-col p {
-  margin: 5px 0;
-  color: #374151;
-}
-</style>
+    .logo img {
+      height: 88px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0A3D62;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #145a8d;
+    }
+
+    .header-phone {
+      justify-self: end;
+      padding-left: 20px;
+    }
+
+    .header-phone a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0A3D62;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .over-ons-hero {
+      position: relative;
+      background: url("picture-over-ons-pagina.png") center/cover no-repeat;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .over-ons-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .over-ons-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .over-ons-hero-content h1 {
+      font-size: 60px;
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+
+    .over-ons-hero-content p {
+      font-size: 24px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 30px;
+    }
+
+    .content-block {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #0A3D62;
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .cta-box {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 35px 30px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-size: 30px;
+      color: #0A3D62;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 750px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #0A3D62;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #145a8d;
+    }
+
+    footer {
+      background: #f5f5f5;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 20px;
+    }
+
+    .footer-col h3 {
+      font-size: 24px;
+      color: #0A3D62;
+      margin-bottom: 10px;
+    }
+
+    .footer-col h4 {
+      font-size: 20px;
+      color: #0A3D62;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p {
+      margin: 6px 0;
+      color: #374151;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .header-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .logo,
+      .header-phone {
+        justify-self: center;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .over-ons-hero-content h1 {
+        font-size: 42px;
+      }
+
+      .over-ons-hero-content p {
+        font-size: 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo img {
+        height: 72px;
+      }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      .header-phone a {
+        font-size: 18px;
+      }
+
+      .over-ons-hero {
+        min-height: 300px;
+      }
+
+      .over-ons-hero-content h1 {
+        font-size: 34px;
+      }
+
+      .over-ons-hero-content p {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+
+      .cta-box h3 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<div class="header-container">
-<div class="logo">
-<img src="hero-logo.png">
-</div>
-<nav>
-<a href="index.html">Diensten</a>
-<a href="over-ons.html">Over ons</a>
-<a href="#">Contact</a>
-</nav>
-<div class="header-phone">
-<a href="tel:+31851234567">📞 085-1234567</a>
-</div>
-</div>
-</header>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="hero-logo.png" alt="Logo Het Noorden">
+      </div>
 
-<section class="over-ons-hero">
-<div class="over-ons-hero-content">
-<h1>Over ons</h1>
-<p>Van Schipholritten naar breed inzetbaar vervoer</p>
-</div>
-</section>
+      <nav>
+        <a href="index.html">Diensten</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-<div class="container">
-  <h2>Onze achtergrond</h2>
-  <p>
-    Het Noorden is ontstaan vanuit het taxivervoer, waarbij de focus in het begin voornamelijk lag op ritten van en naar Schiphol.
-    In deze periode hebben wij een sterke basis opgebouwd in punctualiteit, klantgerichtheid en representatieve uitvoering.
-  </p>
+      <div class="header-phone">
+        <a href="tel:+31851234567">085-1234567</a>
+      </div>
+    </div>
+  </header>
 
-  <p>
-    Vanuit die ervaring zijn wij doorgegroeid naar het leerlingenvervoer. Daar kwamen andere verantwoordelijkheden bij kijken,
-    zoals structuur, betrouwbaarheid en een zorgvuldige benadering. Die ontwikkeling vormde de basis voor verdere uitbreiding
-    naar ander doelgroepenvervoer.
-  </p>
+  <section class="over-ons-hero">
+    <div class="over-ons-hero-content">
+      <h1>Over ons</h1>
+      <p>Van taxivervoer naar een betrouwbare partner in personen- en doelgroepenvervoer</p>
+    </div>
+  </section>
 
-  <h2>Hoe wij zijn gegroeid</h2>
-  <p>
-    In de loop der tijd heeft Het Noorden de dienstverlening verder uitgebreid. Waar het begon met taxivervoer en Schipholritten,
-    ondersteunen wij inmiddels ook binnen leerlingenvervoer, doelgroepenvervoer en andere vormen van personenvervoer.
-  </p>
+  <div class="container">
 
-  <p>
-    Daarnaast bieden wij ook medicijnenvervoer aan voor apotheken en ziekenhuizen. Daarbij draait het om snelheid, zorgvuldigheid
-    en betrouwbaarheid, zowel bij geplande ritten als bij spoedleveringen.
-  </p>
-
-  <p>
-    Onze werkwijze is altijd gericht gebleven op kwaliteit, duidelijke communicatie en een professionele uitvoering. Wij werken
-    aanvullend op bestaande structuren en zetten in op langdurige samenwerking, waarbij vertrouwen centraal staat.
-  </p>
-  <h2>Waar wij voor staan</h2>
-
-  <p>
-    Betrouwbaarheid, duidelijke communicatie en een professionele uitvoering vormen de basis van onze dienstverlening.
-    Wij denken mee, handelen praktisch en zorgen ervoor dat ritten zorgvuldig en volgens afspraak worden uitgevoerd.
-  </p>
-</div>
-
-<footer>
-  <div class="footer-container">
-
-    <div class="footer-col">
-      <h3>Het Noorden</h3>
-      <p>vervoer zoals het hoort</p>
+    <div class="content-block">
+      <h2>Onze achtergrond</h2>
+      <p>
+        Het Noorden is ontstaan vanuit het taxivervoer, met in de beginfase een sterke focus op ritten van en naar Schiphol.
+        In die periode hebben wij een stevige basis opgebouwd in punctualiteit, klantgerichtheid en representatieve uitvoering.
+      </p>
+      <p>
+        Vanuit die ervaring zijn wij verder gegroeid naar leerlingenvervoer en andere vormen van doelgroepenvervoer.
+        Daarbij kwamen betrouwbaarheid, structuur en een zorgvuldige benadering steeds centraler te staan.
+      </p>
     </div>
 
-    <div class="footer-col">
-      <h4>Diensten</h4>
-      <p>Taxivervoer</p>
-      <p>Leerlingenvervoer</p>
-      <p>Zorgvervoer</p>
-      <p>Medicijnenvervoer</p>
+    <div class="content-block">
+      <h2>Hoe wij zijn gegroeid</h2>
+      <p>
+        Door de jaren heen heeft Het Noorden de dienstverlening verder verbreed. Waar het begon met taxivervoer,
+        ondersteunen wij inmiddels ook binnen leerlingenvervoer, zorgvervoer, medicijnenvervoer en andere vormen van personenvervoer.
+      </p>
+      <p>
+        Vooral binnen medicijnenvervoer draait het om snelheid, nauwkeurigheid en betrouwbaarheid.
+        Zowel bij geplande ritten als bij spoedleveringen is een zorgvuldige uitvoering essentieel.
+      </p>
+      <p>
+        Onze dienstverlening sluit aan op bestaande structuren en is gericht op kwaliteit, duidelijke communicatie
+        en langdurige samenwerking. Vertrouwen staat daarbij altijd centraal.
+      </p>
     </div>
 
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <p>📞 085-1234567</p>
-      <p>Email: info@hetnoorden.nl</p>
+    <div class="content-block">
+      <h2>Waar wij voor staan</h2>
+      <p>
+        Betrouwbaarheid, duidelijke communicatie en professionele uitvoering vormen de kern van onze werkwijze.
+        Wij denken praktisch mee, schakelen snel en zorgen ervoor dat vervoer zorgvuldig en volgens afspraak wordt uitgevoerd.
+      </p>
+    </div>
+
+    <div class="cta-box">
+      <h3>Op zoek naar een betrouwbare vervoerspartner?</h3>
+      <p>
+        Het Noorden denkt graag mee over passende vervoersoplossingen voor organisaties, instellingen en particulieren.
+        Neem contact met ons op voor de mogelijkheden.
+      </p>
+      <a href="contact.html" class="cta-button">Neem contact op</a>
     </div>
 
   </div>
-</footer>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Het Noorden</h3>
+        <p>Vervoer zoals het hoort</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Diensten</h4>
+        <p>Taxivervoer</p>
+        <p>Leerlingenvervoer</p>
+        <p>Zorgvervoer</p>
+        <p>Medicijnenvervoer</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>085-1234567</p>
+        <p>info@hetnoorden.nl</p>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
