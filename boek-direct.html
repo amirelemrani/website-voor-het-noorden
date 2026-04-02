@@ -4,19 +4,452 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boek direct | Het Noorden</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #1f2937;
+      background: #ffffff;
+    }
+
+    header {
+      background: #fff;
+      width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 18px 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo a {
+      display: inline-block;
+    }
+
+    .logo img {
+      height: 88px;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0A3D62;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #145a8d;
+    }
+
+    .header-phone {
+      justify-self: end;
+      padding-left: 20px;
+    }
+
+    .header-phone a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0A3D62;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .page-hero {
+      background: linear-gradient(rgba(10, 61, 98, 0.78), rgba(10, 61, 98, 0.78)),
+        url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .page-hero h1 {
+      font-size: 52px;
+      margin: 0 0 12px 0;
+    }
+
+    .page-hero p {
+      font-size: 22px;
+      margin: 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .form-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .info-card,
+    .form-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 32px;
+      border: 1px solid #eef2f7;
+    }
+
+    .info-card h2,
+    .form-card h2 {
+      margin-top: 0;
+      color: #0A3D62;
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .info-card p,
+    .form-card p {
+      color: #4b5563;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .info-points {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-point {
+      background: #f8fafc;
+      border-left: 4px solid #0A3D62;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: #374151;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0A3D62;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 15px;
+      color: #1f2937;
+      background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #0A3D62;
+      box-shadow: 0 0 0 3px rgba(10, 61, 98, 0.12);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      display: inline-block;
+      background: #0A3D62;
+      color: #fff;
+      border: none;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background: #145a8d;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #0A3D62;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #f5f5f5;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 20px;
+    }
+
+    .footer-col h3 {
+      font-size: 24px;
+      color: #0A3D62;
+      margin-bottom: 10px;
+    }
+
+    .footer-col h4 {
+      font-size: 20px;
+      color: #0A3D62;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p {
+      margin: 6px 0;
+      color: #374151;
+      font-size: 17px;
+    }
+
+    @media (max-width: 950px) {
+      .header-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .logo,
+      .header-phone {
+        justify-self: center;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .form-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page-hero h1 {
+        font-size: 38px;
+      }
+
+      .page-hero p {
+        font-size: 18px;
+      }
+
+      .form-section {
+        padding: 35px 16px;
+      }
+
+      .info-card,
+      .form-card {
+        padding: 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1>Boek direct</h1>
-<form action="send-booking.php" method="POST">
-<input type="text" name="naam" placeholder="Naam" required><br>
-<input type="tel" name="telefoon" placeholder="Telefoon" required><br>
-<input type="email" name="email" placeholder="Email" required><br>
-<input type="text" name="ophaaladres" placeholder="Ophaaladres" required><br>
-<input type="text" name="bestemming" placeholder="Bestemming" required><br>
-<input type="date" name="datum" required><br>
-<input type="time" name="tijd" required><br>
-<textarea name="opmerkingen" placeholder="Opmerkingen"></textarea><br>
-<button type="submit">Verstuur</button>
-</form>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="hero-logo.png" alt="Logo Het Noorden">
+        </a>
+      </div>
+
+      <nav>
+        <a href="index.html#diensten">Diensten</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-phone">
+        <a href="tel:+31851234567">085-1234567</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <h1>Boek direct</h1>
+    <p>Vraag eenvoudig uw rit aan. Vul hieronder uw gegevens in en wij nemen zo snel mogelijk contact met u op om de boeking te bevestigen.</p>
+  </section>
+
+  <section class="form-section">
+    <div class="form-layout">
+      <div class="info-card">
+        <a href="index.html" class="back-link">← Terug naar homepage</a>
+        <h2>Uw aanvraag</h2>
+        <p>Gebruik dit formulier voor taxivervoer, zakelijk vervoer, zorgvervoer en overige ritaanvragen. Na ontvangst beoordelen wij uw aanvraag en nemen wij contact met u op.</p>
+
+        <div class="info-points">
+          <div class="info-point">Duidelijke aanvraag in één overzicht</div>
+          <div class="info-point">Snelle opvolging van uw ritverzoek</div>
+          <div class="info-point">Geschikt voor particuliere en zakelijke aanvragen</div>
+          <div class="info-point">Ook bruikbaar voor geplande ritten en terugritten</div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Rit aanvragen</h2>
+        <p>Vul alle gegevens zo compleet mogelijk in. Dan kunnen wij uw aanvraag sneller verwerken.</p>
+
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Uw telefoonnummer" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="Uw e-mailadres" required>
+            </div>
+
+            <div class="form-group">
+              <label for="dienst">Type vervoer</label>
+              <select id="dienst" name="dienst" required>
+                <option value="">Maak een keuze</option>
+                <option value="Taxivervoer">Taxivervoer</option>
+                <option value="Leerlingenvervoer">Leerlingenvervoer</option>
+                <option value="Zakelijk vervoer">Zakelijk vervoer</option>
+                <option value="Zorgvervoer">Zorgvervoer</option>
+                <option value="Medicijnenvervoer">Medicijnenvervoer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ophaaladres">Ophaaladres</label>
+              <input type="text" id="ophaaladres" name="ophaaladres" placeholder="Straat, huisnummer, plaats" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bestemming">Bestemming</label>
+              <input type="text" id="bestemming" name="bestemming" placeholder="Straat, huisnummer, plaats" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="datum">Datum</label>
+              <input type="date" id="datum" name="datum" required>
+            </div>
+
+            <div class="form-group">
+              <label for="tijd">Tijd</label>
+              <input type="time" id="tijd" name="tijd" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="opmerkingen">Extra opmerkingen</label>
+            <textarea id="opmerkingen" name="opmerkingen" placeholder="Bijvoorbeeld aantal personen, bagage, retourrit of andere bijzonderheden"></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Verstuur aanvraag</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Het Noorden</h3>
+        <p>Vervoer zoals het hoort</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Diensten</h4>
+        <p>Taxivervoer</p>
+        <p>Leerlingenvervoer</p>
+        <p>Zorgvervoer</p>
+        <p>Medicijnenvervoer</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>085-1234567</p>
+        <p>booking@pvhetnoorden.nl</p>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
