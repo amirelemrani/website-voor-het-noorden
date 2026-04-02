@@ -92,10 +92,8 @@
 
     .page-hero p {
       font-size: 22px;
-      margin: 0;
+      margin: 0 auto;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
       line-height: 1.6;
     }
 
@@ -231,6 +229,10 @@
       text-decoration: underline;
     }
 
+    .hidden-field {
+      display: none;
+    }
+
     footer {
       background: #f5f5f5;
       margin-top: 60px;
@@ -362,26 +364,29 @@
         <p>Vul alle gegevens zo compleet mogelijk in. Dan kunnen wij uw aanvraag sneller verwerken.</p>
 
         <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="2f35bed2-8612-420b-97f3-35a74a755df3">
+          <input type="hidden" name="subject" value="Nieuwe boeking via Het Noorden website">
+          <input type="hidden" name="from_name" value="Het Noorden Website">
+          <input type="hidden" name="redirect" value="https://website-voor-het-noorden-165163u29-amirelemranis-projects.vercel.app/bedankt.html">
 
-  <input type="hidden" name="access_key" value="2f35bed2-8612-420b-97f3-35a74a755df3">
-  <input type="hidden" name="subject" value="Nieuwe boeking via Het Noorden website">
-  <input type="hidden" name="from_name" value="Het Noorden Website">
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off">
+
           <div class="form-row">
             <div class="form-group">
               <label for="naam">Naam</label>
-              <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" required>
+              <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" autocomplete="name" required>
             </div>
 
             <div class="form-group">
               <label for="telefoon">Telefoonnummer</label>
-              <input type="tel" id="telefoon" name="telefoon" placeholder="Uw telefoonnummer" required>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Uw telefoonnummer" autocomplete="tel" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="email">E-mailadres</label>
-              <input type="email" id="email" name="email" placeholder="Uw e-mailadres" required>
+              <input type="email" id="email" name="email" placeholder="Uw e-mailadres" autocomplete="email" required>
             </div>
 
             <div class="form-group">
@@ -400,7 +405,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="ophaaladres">Ophaaladres</label>
-              <input type="text" id="ophaaladres" name="ophaaladres" placeholder="Straat, huisnummer, plaats" required>
+              <input type="text" id="ophaaladres" name="ophaaladres" placeholder="Straat, huisnummer, plaats" autocomplete="street-address" required>
             </div>
 
             <div class="form-group">
