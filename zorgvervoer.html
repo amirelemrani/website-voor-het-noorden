@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zorgvervoer | Het Noorden</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #1f2937;
+      background: #ffffff;
+    }
+
+    header {
+      background: #fff;
+      width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      padding: 18px 25px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 88px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0A3D62;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #145a8d;
+    }
+
+    .header-phone {
+      justify-self: end;
+      padding-left: 20px;
+    }
+
+    .header-phone a {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0A3D62;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .zorgvervoer-hero {
+      position: relative;
+      background: url("background-zorgvervoer.png") center/cover no-repeat;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .zorgvervoer-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .zorgvervoer-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .zorgvervoer-hero-content h1 {
+      font-size: 60px;
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+
+    .zorgvervoer-hero-content p {
+      font-size: 24px;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 70px 30px;
+    }
+
+    .content-block {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #0A3D62;
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .cta-box {
+      background: #f8fafc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 35px 30px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .cta-box h3 {
+      font-size: 30px;
+      color: #0A3D62;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 750px;
+      margin: 0 auto 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #0A3D62;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #145a8d;
+    }
+
+    footer {
+      background: #f5f5f5;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 20px;
+    }
+
+    .footer-col h3 {
+      font-size: 24px;
+      color: #0A3D62;
+      margin-bottom: 10px;
+    }
+
+    .footer-col h4 {
+      font-size: 20px;
+      color: #0A3D62;
+      margin-bottom: 12px;
+    }
+
+    .footer-col p {
+      margin: 6px 0;
+      color: #374151;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .header-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .logo,
+      .header-phone {
+        justify-self: center;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .zorgvervoer-hero-content h1 {
+        font-size: 42px;
+      }
+
+      .zorgvervoer-hero-content p {
+        font-size: 20px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo img {
+        height: 72px;
+      }
+
+      nav a {
+        font-size: 16px;
+      }
+
+      .header-phone a {
+        font-size: 18px;
+      }
+
+      .zorgvervoer-hero {
+        min-height: 300px;
+      }
+
+      .zorgvervoer-hero-content h1 {
+        font-size: 34px;
+      }
+
+      .zorgvervoer-hero-content p {
+        font-size: 18px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+
+      .cta-box h3 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="hero-logo.png" alt="Logo Het Noorden">
+        </a>
+      </div>
+
+      <nav>
+        <a href="index.html#diensten">Diensten</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-phone">
+        <a href="tel:+31854014408">085-4014408</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="zorgvervoer-hero">
+    <div class="zorgvervoer-hero-content">
+      <h1>Zorgvervoer</h1>
+      <p>Rustig, zorgvuldig en betrouwbaar vervoer voor cliënten en instellingen</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <div class="content-block">
+      <h2>Vervoer met aandacht voor de reiziger</h2>
+      <p>
+        Bij Het Noorden begrijpen wij dat zorgvervoer meer vraagt dan alleen iemand van A naar B brengen. In deze vorm van vervoer zijn rust, duidelijkheid en betrouwbaarheid essentieel. Daarom zorgen wij ervoor dat iedere rit zorgvuldig wordt uitgevoerd, met aandacht voor de situatie van de reiziger.
+      </p>
+      <p>
+        Wij ondersteunen zorginstellingen en andere opdrachtgevers met vervoer dat past bij cliënten die afhankelijk zijn van structuur, begeleiding en een prettige reisomgeving. Daarbij staat niet alleen punctualiteit centraal, maar ook de manier waarop iemand vervoerd wordt.
+      </p>
+      <p>
+        Onze chauffeurs worden geselecteerd op eigenschappen die binnen zorgvervoer van groot belang zijn, zoals geduld, respect, rust en verantwoordelijkheidsgevoel. Zij begrijpen dat een rustige benadering en duidelijke communicatie een groot verschil kunnen maken tijdens een rit.
+      </p>
+      <p>
+        Of het nu gaat om vervoer naar een dagbesteding, zorglocatie, afspraak of andere bestemming, wij zorgen voor een professionele uitvoering die vertrouwen geeft aan zowel opdrachtgever als reiziger.
+      </p>
+      <p>
+        Zo levert Het Noorden zorgvervoer dat niet alleen goed geregeld is, maar ook past bij de mensen voor wie het bedoeld is.
+      </p>
+    </div>
+
+    <div class="cta-box">
+      <h3>Op zoek naar een betrouwbare partner in zorgvervoer?</h3>
+      <p>
+        Het Noorden ondersteunt zorginstellingen en opdrachtgevers met zorgvuldig uitgevoerd vervoer, professionele chauffeurs en een aanpak waarin rust, duidelijkheid en betrouwbaarheid centraal staan. Neem contact met ons op voor de mogelijkheden.
+      </p>
+      <a href="contact.html" class="cta-button">Neem contact op</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Het Noorden</h3>
+        <p>Vervoer zoals het hoort</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Diensten</h4>
+        <p>Taxivervoer</p>
+        <p>Leerlingenvervoer</p>
+        <p>Zorgvervoer</p>
+        <p>Medicijnenvervoer</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>085-4014408</p>
+        <p>booking@pvhetnoorden.nl</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
