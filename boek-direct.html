@@ -216,6 +216,11 @@
       background: #145a8d;
     }
 
+    .submit-button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
     .back-link {
       display: inline-block;
       margin-bottom: 18px;
@@ -231,6 +236,17 @@
 
     .hidden-field {
       display: none;
+    }
+
+    .form-status {
+      margin-top: 16px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .form-status.error {
+      color: #b91c1c;
     }
 
     footer {
@@ -363,11 +379,10 @@
         <h2>Rit aanvragen</h2>
         <p>Vul alle gegevens zo compleet mogelijk in. Dan kunnen wij uw aanvraag sneller verwerken.</p>
 
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form id="booking-form">
           <input type="hidden" name="access_key" value="f3daaa22-fb53-4e85-939f-9c0e229feedb">
           <input type="hidden" name="subject" value="Nieuwe boeking via Het Noorden website">
           <input type="hidden" name="from_name" value="Het Noorden Website">
-          <input type="hidden" name="redirect" value="https://website-voor-het-noorden-165163u29-amirelemranis-projects.vercel.app/bedankt.html">
 
           <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off">
 
@@ -431,7 +446,8 @@
             <textarea id="opmerkingen" name="opmerkingen" placeholder="Bijvoorbeeld aantal personen, bagage, retourrit of andere bijzonderheden"></textarea>
           </div>
 
-          <button type="submit" class="submit-button">Verstuur aanvraag</button>
+          <button type="submit" class="submit-button" id="submit-button">Verstuur aanvraag</button>
+          <div id="form-status" class="form-status"></div>
         </form>
       </div>
     </div>
@@ -459,6 +475,45 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById("booking-form");
+    const submitButton = document.getElementById("submit-button");
+    const statusMessage = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      statusMessage.textContent = "";
+      statusMessage.className = "form-status";
+      submitButton.disabled = true;
+      submitButton.textContent = "Bezig met verzenden...";
+
+      try {
+        const formData = new FormData(form);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          window.location.href = "bedankt.html";
+        } else {
+          statusMessage.textContent = "Er ging iets mis bij het verzenden. Probeer het opnieuw.";
+          statusMessage.classList.add("error");
+        }
+      } catch (error) {
+        statusMessage.textContent = "Er ging iets mis bij het verzenden. Probeer het opnieuw.";
+        statusMessage.classList.add("error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Verstuur aanvraag";
+      }
+    });
+  </script>
 
 </body>
 </html>
