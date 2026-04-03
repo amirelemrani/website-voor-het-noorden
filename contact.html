@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bedankt | Het Noorden</title>
+  <title>Contact | Het Noorden</title>
 
   <style>
     * {
@@ -57,6 +57,11 @@
       font-weight: 600;
       color: #0A3D62;
       text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #145a8d;
     }
 
     .header-phone {
@@ -72,53 +77,165 @@
       white-space: nowrap;
     }
 
-    .thanks-section {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      background: #f9fafb;
+    .page-hero {
+      background: linear-gradient(rgba(10, 61, 98, 0.78), rgba(10, 61, 98, 0.78)),
+        url("hero-vervoer-het-noorden-achtergrond.png") center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 70px 20px;
     }
 
-    .thanks-card {
-      max-width: 700px;
-      width: 100%;
+    .page-hero h1 {
+      font-size: 52px;
+      margin: 0 0 12px 0;
+    }
+
+    .page-hero p {
+      font-size: 22px;
+      margin: 0 auto;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .contact-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .info-card,
+    .form-card {
       background: #ffffff;
-      padding: 40px;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      text-align: center;
+      padding: 32px;
       border: 1px solid #eef2f7;
     }
 
-    .thanks-card h1 {
+    .info-card h2,
+    .form-card h2 {
       margin-top: 0;
       color: #0A3D62;
-      font-size: 38px;
+      font-size: 30px;
       margin-bottom: 16px;
     }
 
-    .thanks-card p {
-      font-size: 18px;
-      line-height: 1.7;
+    .info-card p,
+    .form-card p {
       color: #4b5563;
-      margin-bottom: 28px;
+      line-height: 1.7;
+      font-size: 17px;
     }
 
-    .home-button {
+    .info-points {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-point {
+      background: #f8fafc;
+      border-left: 4px solid #0A3D62;
+      padding: 14px 16px;
+      border-radius: 8px;
+      color: #374151;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0A3D62;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 15px;
+      color: #1f2937;
+      background: #fff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #0A3D62;
+      box-shadow: 0 0 0 3px rgba(10, 61, 98, 0.12);
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .submit-button {
       display: inline-block;
       background: #0A3D62;
       color: #fff;
-      text-decoration: none;
-      padding: 14px 22px;
+      border: none;
+      padding: 15px 24px;
       border-radius: 10px;
       font-size: 16px;
       font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .submit-button:hover {
+      background: #145a8d;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #0A3D62;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .hidden-field {
+      display: none;
     }
 
     footer {
       background: #f5f5f5;
+      margin-top: 60px;
     }
 
     .footer-container {
@@ -164,9 +281,38 @@
         gap: 20px;
       }
 
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
       .footer-container {
         grid-template-columns: 1fr;
         text-align: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page-hero h1 {
+        font-size: 38px;
+      }
+
+      .page-hero p {
+        font-size: 18px;
+      }
+
+      .contact-section {
+        padding: 35px 16px;
+      }
+
+      .info-card,
+      .form-card {
+        padding: 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-bottom: 0;
       }
     }
   </style>
@@ -193,11 +339,77 @@
     </div>
   </header>
 
-  <section class="thanks-section">
-    <div class="thanks-card">
-      <h1>Bedankt voor uw bericht</h1>
-      <p>Uw bericht is succesvol verzonden. Wij nemen zo snel mogelijk contact met u op.</p>
-      <a href="index.html" class="home-button">Terug naar homepage</a>
+  <section class="page-hero">
+    <h1>Neem contact op</h1>
+    <p>Heeft u een vraag, wilt u een offerte aanvragen of meer informatie ontvangen? Vul het formulier in en wij nemen zo snel mogelijk contact met u op.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-layout">
+      <div class="info-card">
+        <a href="index.html" class="back-link">← Terug naar homepage</a>
+        <h2>Contact en aanvragen</h2>
+        <p>Gebruik dit formulier voor algemene vragen, offertes, samenwerkingen en overige contactverzoeken. Voor directe ritaanvragen gebruikt u bij voorkeur de boekingspagina.</p>
+
+        <div class="info-points">
+          <div class="info-point">Voor algemene vragen en informatieverzoeken</div>
+          <div class="info-point">Geschikt voor zakelijke en particuliere aanvragen</div>
+          <div class="info-point">Ook voor offertes en samenwerkingen</div>
+          <div class="info-point">Wij reageren zo snel mogelijk op uw bericht</div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Stuur ons een bericht</h2>
+        <p>Vul uw gegevens zo volledig mogelijk in, zodat wij u snel en gericht kunnen helpen.</p>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="2f35bed2-8612-420b-97f3-35a74a755df3">
+          <input type="hidden" name="subject" value="Nieuw contactbericht via Het Noorden website">
+          <input type="hidden" name="from_name" value="Het Noorden Website">
+          <input type="hidden" name="redirect" value="https://website-voor-het-noorden-165163u29-amirelemranis-projects.vercel.app/bedankt-contact.html">
+
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" autocomplete="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="Uw telefoonnummer" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="Uw e-mailadres" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="onderwerp">Onderwerp</label>
+              <select id="onderwerp" name="onderwerp" required>
+                <option value="">Maak een keuze</option>
+                <option value="Algemene vraag">Algemene vraag</option>
+                <option value="Offerte aanvragen">Offerte aanvragen</option>
+                <option value="Zakelijke samenwerking">Zakelijke samenwerking</option>
+                <option value="Zorgvervoer">Zorgvervoer</option>
+                <option value="Overig">Overig</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bericht">Bericht</label>
+            <textarea id="bericht" name="bericht" placeholder="Beschrijf hier uw vraag of aanvraag" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Verstuur bericht</button>
+        </form>
+      </div>
     </div>
   </section>
 
